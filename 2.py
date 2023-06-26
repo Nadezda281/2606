@@ -9,23 +9,23 @@
 #     1 2 3 4 5
 #     6
 #     -> 5
-a = int(input("введите количество элементов в массиве "))
-list_1=[]
-for i in range(a):
-    list_1 .append(i)
-print(list_1)
-count=0
-list_1 .pop()
-z=a-1
-print(z)
-min =z - list_1[0]
-index = 0
-number=0
-for i in list_1:
-         count = z - list_1[i]
-if count < min:
-             min = count
-             index = i
-print(i)
+n = int(input("Введите количество элементов в массиве: "))
+
+a = []
+for i in range(n):
+    a.append(int(input("Введите элемент массива A[" + str(i + 1) + "]: ")))
+
+x = int(input("Введите число X: "))
+
+min_diff = abs(x - a[0])
+min_index = 0
+
+for i in range(1, n):
+    diff = abs(x - a[i])
+    if diff < min_diff:
+        min_diff = diff
+        min_index = i
+
+print("Самый близкий по величине элемент к числу", x, "в массиве A[1..N]: A[" + str(min_index + 1) + "] = ", a[min_index])
 
 
